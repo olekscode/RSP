@@ -5,24 +5,19 @@ class Player
         @name = name
     end
 
-private
-    # TODO: move this to Judge class
-    def output(num)
-        log = "#{@name}: "
-
-        if num == 0
-            puts log + "rock".upcase
-        elsif num == 1
-            puts log + "scissors".upcase
+    def output
+        if @choice == 0
+            puts "#{@name}: ROCK"
+        elsif @choice == 1
+            puts "#{@name}: SCISSORS"
         else
-            puts log + "paper".upcase
+            puts "#{@name}: PAPER"
         end
     end
 
-public
     def play
          @choice = rand(3)
-         output(@choice)
+         return @choice
     end
 
     def choice
